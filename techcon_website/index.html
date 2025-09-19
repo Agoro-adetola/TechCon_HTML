@@ -88,7 +88,7 @@
             margin: 0 auto;
             padding: 3rem 2rem;
         }
-        /* Conference Introduction Section */
+        /* Conference Sections */
         .intro-section {
             background: rgba(255, 255, 255, 0.95);
             padding: 4rem;
@@ -130,6 +130,26 @@
             max-width: 800px;
             margin: 0 auto 3rem auto;
             line-height: 1.8;
+        }
+        .highlights-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 4rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .highlights-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
         }
         /* Video Container */
         .video-container {
@@ -269,13 +289,13 @@
             main {
                 padding: 2rem 1rem;
             }
-            .intro-section {
+            .intro-section, .highlights-section {
                 padding: 2.5rem;
             }
-            .intro-section h2 {
+            .intro-section h2, .highlights-section h2 {
                 font-size: 2.2rem;
             }
-            .intro-section p {
+            .intro-section p, .highlights-section p {
                 font-size: 1.1rem;
             }
             .video-container {
@@ -316,7 +336,7 @@
         }
         /* Supports fallback for backdrop-filter */
         @supports not (backdrop-filter: blur(10px)) {
-            header, .intro-section {
+            header, .intro-section, .highlights-section {
                 background: #fff;
             }
             footer {
@@ -349,7 +369,10 @@
         <section class="intro-section" aria-labelledby="conference-intro">
             <h2 id="conference-intro">Welcome to TechCon 2024</h2>
             <p>Join us for the most anticipated technology conference of the year! TechCon 2024 brings together industry leaders, innovative startups, and passionate developers from around the globe to explore the latest trends in artificial intelligence, web development, cybersecurity, and emerging technologies. Experience three days of inspiring keynotes, hands-on workshops, networking opportunities, and cutting-edge demonstrations that will shape the future of technology.</p>
-            <!-- Event Highlights -->
+        </section>
+        <!-- Highlights Section -->
+        <section class="highlights-section" aria-labelledby="event-highlights">
+            <h2 id="event-highlights">Event Highlights</h2>
             <div class="highlights">
                 <div class="highlight-card">
                     <span class="highlight-icon">🎯</span>
@@ -370,8 +393,6 @@
             <!-- Promotional Video Section -->
             <div class="video-container">
                 <h3>Conference Promotional Video</h3>
-               
-                <!-- Video Element with Accessibility Features -->
                 <div class="video-wrapper">
                     <video controls preload="metadata" aria-describedby="video-description" poster="https://via.placeholder.com/800x450/2c3e50/ffffff?text=TechCon+2024+Promo">
                         <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
