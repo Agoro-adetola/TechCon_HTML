@@ -1,429 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join TechCon 2024 for cutting-edge tech talks, workshops, and networking. Explore AI, web development, and more!">
-    <meta name="keywords" content="TechCon 2024, technology conference, AI, web development, workshops, cybersecurity">
-    <title>TechCon 2024 - Premier Technology Conference</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        /* Header Styles */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        header img {
-            height: 50px;
-            width: auto;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-        /* Navigation Styles */
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-        }
-        nav li {
-            margin: 0;
-        }
-        nav a {
-            color: #2c3e50;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-            border: 2px solid transparent;
-        }
-        nav a:hover {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-        nav a:focus {
-            outline: 3px solid #3498db;
-            outline-offset: 2px;
-        }
-        /* Main Content Styles */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-        /* Conference Sections */
-        .intro-section {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 4rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .intro-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-        }
-        .intro-section h2 {
-            font-size: 2.8rem;
-            color: #2c3e50;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-        .intro-section h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            margin: 1rem auto;
-            border-radius: 2px;
-        }
-        .intro-section p {
-            font-size: 1.3rem;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto 3rem auto;
-            line-height: 1.8;
-        }
-        .highlights-section {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 4rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .highlights-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-        }
-        /* Video Container */
-        .video-container {
-            background: rgba(248, 249, 250, 0.8);
-            padding: 2.5rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 5px solid #3498db;
-        }
-        .video-wrapper {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        }
-        video {
-            width: 100%;
-            height: auto;
-            display: block;
-            background: #000;
-        }
-        .video-description {
-            background: #e8f4f8;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 1.5rem;
-            border-left: 4px solid #3498db;
-        }
-        .video-description h3 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        .video-description p {
-            color: #555;
-            font-size: 1rem;
-            margin: 0;
-        }
-        /* Accessibility Features */
-        .accessibility-note {
-            background: #d5f4e6;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-            border-left: 4px solid #27ae60;
-            font-size: 0.95rem;
-        }
-        .accessibility-note h4 {
-            color: #27ae60;
-            margin-bottom: 0.5rem;
-        }
-        .accessibility-note p {
-            color: #155724;
-            margin: 0;
-        }
-        /* Event Highlights */
-        .highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        .highlight-card {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            border-top: 4px solid #3498db;
-        }
-        .highlight-card:hover {
-            transform: translateY(-5px);
-        }
-        .highlight-card h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-        .highlight-card p {
-            color: #666;
-            font-size: 1rem;
-        }
-        .highlight-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-        /* Footer Styles */
-        footer {
-            background: rgba(44, 62, 80, 0.95);
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem;
-            backdrop-filter: blur(10px);
-            margin-top: 4rem;
-        }
-        footer p {
-            font-size: 1.1rem;
-            margin: 0;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .footer-links {
-            margin: 1.5rem 0;
-        }
-        .footer-links a {
-            color: #3498db;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: 600;
-        }
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-            main {
-                padding: 2rem 1rem;
-            }
-            .intro-section, .highlights-section {
-                padding: 2.5rem;
-            }
-            .intro-section h2, .highlights-section h2 {
-                font-size: 2.2rem;
-            }
-            .intro-section p, .highlights-section p {
-                font-size: 1.1rem;
-            }
-            .video-container {
-                padding: 1.5rem;
-            }
-            .highlights {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-        /* Focus styles for accessibility */
-        *:focus {
-            outline: 3px solid #3498db;
-            outline-offset: 2px;
-        }
-        /* Skip to main content link for screen readers */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 6px;
-            background: #000;
-            color: white;
-            padding: 8px;
-            text-decoration: none;
-            z-index: 100;
-        }
-        .skip-link:focus {
-            top: 6px;
-        }
-        /* Video fallback for unsupported browsers */
-        .video-fallback {
-            background: #f8f9fa;
-            padding: 2rem;
-            text-align: center;
-            border: 2px solid #dee2e6;
-            border-radius: 8px;
-            color: #6c757d;
-        }
-        /* Supports fallback for backdrop-filter */
-        @supports not (backdrop-filter: blur(10px)) {
-            header, .intro-section, .highlights-section {
-                background: #fff;
-            }
-            footer {
-                background: #2c3e50;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechCon 2024</title>
 </head>
 <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Header Section -->
-    <header>
-        <div class="header-content">
-            <img src="https://via.placeholder.com/200x50/667eea/ffffff?text=TechCon+2024" alt="TechCon 2024 Logo">
-            <h1>TechCon 2024</h1>
-            <nav role="navigation" aria-label="Main navigation">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#register">Register</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Conference Introduction Section -->
-        <section class="intro-section" aria-labelledby="conference-intro">
-            <h2 id="conference-intro">Welcome to TechCon 2024</h2>
-            <p>Join us for the most anticipated technology conference of the year! TechCon 2024 brings together industry leaders, innovative startups, and passionate developers from around the globe to explore the latest trends in artificial intelligence, web development, cybersecurity, and emerging technologies. Experience three days of inspiring keynotes, hands-on workshops, networking opportunities, and cutting-edge demonstrations that will shape the future of technology.</p>
-        </section>
-        <!-- Highlights Section -->
-        <section class="highlights-section" aria-labelledby="event-highlights">
-            <h2 id="event-highlights">Event Highlights</h2>
-            <div class="highlights">
-                <div class="highlight-card">
-                    <span class="highlight-icon">🎯</span>
-                    <h3>Expert Speakers</h3>
-                    <p>Learn from industry pioneers and thought leaders</p>
-                </div>
-                <div class="highlight-card">
-                    <span class="highlight-icon">🛠️</span>
-                    <h3>Hands-on Workshops</h3>
-                    <p>Interactive sessions with cutting-edge technologies</p>
-                </div>
-                <div class="highlight-card">
-                    <span class="highlight-icon">🤝</span>
-                    <h3>Networking</h3>
-                    <p>Connect with professionals and potential collaborators</p>
-                </div>
-            </div>
-            <!-- Promotional Video Section -->
-            <div class="video-container">
-                <h3>Conference Promotional Video</h3>
-                <div class="video-wrapper">
-                    <video controls preload="metadata" aria-describedby="video-description" poster="https://via.placeholder.com/800x450/2c3e50/ffffff?text=TechCon+2024+Promo">
-                        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
-                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-                        <p class="video-fallback">Your browser does not support the video tag. <a href="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4">Download the video</a>.</p>
-                    </video>
-                </div>
-                <!-- Video Description for Accessibility -->
-                <div class="video-description" id="video-description">
-                    <h3>Video Description</h3>
-                    <p><strong>Visual Content:</strong> The promotional video showcases highlights from previous TechCon events, featuring keynote speakers presenting on stage, attendees participating in interactive workshops, networking sessions in modern conference spaces, and demonstrations of cutting-edge technologies including AI, robotics, and virtual reality experiences.</p>
-                    <p><strong>Audio Content:</strong> Upbeat background music accompanies testimonials from past attendees praising the conference's educational value and networking opportunities, with a narrator highlighting key features of TechCon 2024.</p>
-                </div>
-                <!-- Accessibility Features Note -->
-                <div class="accessibility-note">
-                    <h4>♿ Accessibility Features</h4>
-                    <p>This video includes closed captions in English, audio descriptions for visual content, and keyboard-accessible controls. Transcript available upon request. Video can be paused, volume adjusted, and viewed in fullscreen mode using standard browser controls.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- Footer Section -->
-    <footer role="contentinfo">
-        <div class="footer-content">
-            <p>Copyright &copy; 2024 TechCon Conference. All rights reserved. Empowering innovation through technology education and community collaboration.</p>
-            <div class="footer-links">
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
-                <a href="#accessibility">Accessibility Statement</a>
-            </div>
-        </div>
-    </footer>
+
+  <!-- Header Section -->
+  <header>
+    <h1>TechCon 2024</h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section>
+      <h2>Welcome to TechCon 2024</h2>
+      <p>
+        TechCon 2024 is the premier innovation conference bringing together industry leaders, entrepreneurs, and tech enthusiasts from around the globe. Join us in San Diego this May for groundbreaking talks, networking opportunities, and hands-on experiences with emerging technologies.
+      </p>
+
+      <!-- Embedded Video -->
+      <video controls width="720" aria-label="Promotional video for TechCon 2024">
+        <source src="https://www.youtube.com/watch?v=tMhZtE-Cwn8" type="video/mp4" />
+        <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English" />
+        Your browser does not support the video tag. You can watch the video on 
+        <a href="https://www.youtube.com/watch?v=tMhZtE-Cwn8" target="_blank" rel="noopener">YouTube</a>.
+      </video>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 TechCon. All rights reserved. <strong>Copyright</strong>.</p>
+  </footer>
+
 </body>
 </html>
